@@ -119,35 +119,43 @@
 
                 <div class="card">
 
-                    <h3>Customer</h3>
+    <h3>Customer</h3>
 
-                    <div class="search-wrapper">
+    <div class="search-wrapper">
 
-                        <input
-                            id="customerSearch"
-                            type="text"
-                            placeholder="Search customer...">
+        <input
+            id="customerSearch"
+            type="text"
+            placeholder="Search customer...">
 
-                        <div
-                            id="customerResults"
-                            class="results">
-                        </div>
+        <div
+            id="customerResults"
+            class="results">
+        </div>
 
-                    </div>
+    </div>
 
-                    <input
-                        id="phone"
-                        type="text"
-                        placeholder="Phone Number"
-                        readonly>
+    <input
+        id="phone"
+        type="text"
+        placeholder="Phone Number"
+        readonly>
 
-                    <button
-                        id="newCustomerBtn"
-                        class="secondary">
-                        + Add Customer
-                    </button>
+    <input
+        id="place"
+        type="text"
+        placeholder="Place"
+        readonly>
 
-                </div>
+    <button
+        id="newCustomerBtn"
+        class="secondary">
+
+        + Add Customer
+
+    </button>
+
+</div>
 
                 <!-- Product -->
 
@@ -188,100 +196,131 @@
 
             <section class="right-panel">
 
-                <div class="card">
+    <div class="card">
 
-                    <div class="bill-header">
+        <div class="bill-header">
 
-                        <h2>Current Bill</h2>
+            <div>
 
-                        <span id="itemCount">
-                            0 Items
-                        </span>
+                <h2>Current Bill</h2>
 
-                    </div>
+                <small id="billCustomer">
 
-                    <table>
+                    No Customer Selected
 
-                        <thead>
+                </small>
 
-                        <tr>
+            </div>
 
-                            <th>Product</th>
+            <div>
 
-                            <th>Qty</th>
+                <span id="itemCount">
 
-                            <th>Rate</th>
+                    0 Items
 
-                            <th>Total</th>
+                </span>
 
-                            <th></th>
+            </div>
 
-                        </tr>
+        </div>
 
-                        </thead>
+        <table>
 
-                        <tbody id="billBody">
+            <thead>
 
-                        </tbody>
+                <tr>
 
-                    </table>
+                    <th>Product</th>
 
-                    <div class="summary">
+                    <th>Qty</th>
 
-                        <div class="summary-box">
+                    <th>Rate</th>
 
-                            <span>Total Qty</span>
+                    <th>Total</th>
 
-                            <h2 id="totalQty">
-                                0
-                            </h2>
+                    <th></th>
 
-                        </div>
+                </tr>
 
-                        <div class="summary-box">
+            </thead>
 
-                            <span>Grand Total</span>
+            <tbody id="billBody">
 
-                            <h1 id="grandTotal">
-                                ₹0
-                            </h1>
+            </tbody>
 
-                        </div>
+        </table>
 
-                    </div>
+        <div class="summary">
 
-                    <div class="actions">
+            <div class="summary-box">
 
-                        <button
-                            id="newBill"
-                            class="dark">
+                <span>Total Items</span>
 
-                            New Bill
+                <h2 id="itemCount2">
 
-                        </button>
+                    0
 
-                        <button
-                            id="saveBill"
-                            class="primary">
+                </h2>
 
-                            Save Bill
+            </div>
 
-                        </button>
+            <div class="summary-box">
 
-                        <button
-                            id="shareBill"
-                            class="blue">
+                <span>Total Qty</span>
 
-                            Share
+                <h2 id="totalQty">
 
-                        </button>
+                    0
 
-                    </div>
+                </h2>
 
-                </div>
+            </div>
 
-            </section>
+            <div class="summary-box">
 
+                <span>Grand Total</span>
+
+                <h1 id="grandTotal">
+
+                    ₹0
+
+                </h1>
+
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <button
+                id="newBill"
+                class="dark">
+
+                New Bill
+
+            </button>
+
+            <button
+                id="saveBill"
+                class="primary">
+
+                Save Bill
+
+            </button>
+
+            <button
+                id="shareBill"
+                class="blue">
+
+                Share
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
         </div>
 
     </main>
