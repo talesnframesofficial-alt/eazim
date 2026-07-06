@@ -1,6 +1,36 @@
 console.log("Supabase Client:", supabase);
 
-let products = [];
+const products = [
+
+{ id:1, name:"555 Gold", price:300 },
+
+{ id:2, name:"555 Pearl", price:300 },
+
+{ id:3, name:"Camel Blue", price:320 },
+
+{ id:4, name:"Davidoff Classic", price:320 },
+
+{ id:5, name:"Davidoff Gold Slim", price:330 },
+
+{ id:6, name:"Esse Change", price:200 },
+
+{ id:7, name:"Malboro Red 1st Quality", price:290 },
+
+{ id:8, name:"Malboro Red Pro", price:330 },
+
+{ id:9, name:"Malboro Vista Double Ice", price:340 },
+
+{ id:10, name:"Malboro Vista Double Mix", price:340 },
+
+{ id:11, name:"Manchester Red", price:280 },
+
+{ id:12, name:"Manchester Sapphire Blue", price:290 },
+
+{ id:13, name:"Mond Variance", price:180 },
+
+{ id:14, name:"Platinum Double", price:280 }
+
+];
 let customers = [];
 
 let billItems = [];
