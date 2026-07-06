@@ -1,41 +1,61 @@
-/* ============================================================
-   EAZIM v0.1
-   SCRIPT.JS
-   PART 1
-============================================================ */
-
-const products = [
-    { id: 1, name: "Gold Flake Kings", price: 270 },
-    { id: 2, name: "Gold Flake Lights", price: 250 },
-    { id: 3, name: "Classic Regular", price: 260 },
-    { id: 4, name: "Marlboro Advance", price: 340 }
-];
-
-const customers = [
-    {
-        id: 1,
-        name: "ABC Stores",
-        phone: "9876543210",
-        place: "Trivandrum"
-    },
-    {
-        id: 2,
-        name: "Royal Traders",
-        phone: "9876500000",
-        place: "Kazhakuttam"
-    },
-    {
-        id: 3,
-        name: "Rahman Stores",
-        phone: "9895999999",
-        place: "Pattom"
-    }
-];
+let products = [];
+let customers = [];
 
 let billItems = [];
 
 let selectedCustomer = null;
 let selectedProduct = null;
+async function loadProducts(){
+
+    const { data, error } = await supabase
+        .from("products")
+        .select("*")
+        .order("brand");
+
+    if(error){
+
+        console.error(error);
+
+        return;
+
+    }
+
+    products = data.map(item=>({
+
+        id:item.id,
+
+        name:item.brand,
+
+        price:item.wholesale_price,
+
+        stock:item.stock
+
+    }));
+
+    console.log(products);
+
+}
+
+async function loadCustomers(){
+
+    const { data, error } = await supabase
+        .from("customers")
+        .select("*")
+        .order("name");
+
+    if(error){
+
+        console.error(error);
+
+        return;
+
+    }
+
+    customers = data;
+
+    console.log(customers);
+
+}
 
 const customerSearch = document.getElementById("customerSearch");
 const customerResults = document.getElementById("customerResults");
@@ -674,5 +694,15 @@ newBill.click();
    Initial Render
 ========================================== */
 
-renderBill();
+async function start(){
+
+    await loadProducts();
+
+    await loadCustomers();
+
+    renderBill();
+
+}
+
+start();
                   
