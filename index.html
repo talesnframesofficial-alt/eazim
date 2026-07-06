@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eazim</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="left">
+
+        <h1>Eazim</h1>
+
+        <div class="card">
+
+            <h2>Customer</h2>
+
+            <input
+                type="text"
+                id="customer"
+                placeholder="Customer Name">
+
+            <input
+                type="text"
+                id="phone"
+                placeholder="Phone">
+
+        </div>
+
+        <div class="card">
+
+            <h2>Add Product</h2>
+
+            <select id="product">
+                <option value="">Select Product</option>
+            </select>
+
+            <input
+                type="number"
+                id="qty"
+                placeholder="Quantity">
+
+            <button id="addBtn">
+                Add Item
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="right">
+
+        <div class="bill-card">
+
+            <div class="bill-header">
+
+                <div>
+                    <h2>Current Bill</h2>
+                </div>
+
+                <div id="invoiceNo">
+                    INV-0001
+                </div>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Product</th>
+                        <th>Qty</th>
+                        <th>Rate</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="billBody">
+
+                </tbody>
+
+            </table>
+
+            <div class="summary">
+
+                <div>
+
+                    <span>Total</span>
+
+                    <h1 id="grandTotal">₹0</h1>
+
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="save">
+                    Save Bill
+                </button>
+
+                <button class="share">
+                    Share
+                </button>
+
+                <button class="new">
+                    New Bill
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
