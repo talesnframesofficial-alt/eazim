@@ -12,129 +12,279 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
 </head>
+
 <body>
 
-<div class="container">
+<div class="app">
 
-    <div class="left">
+    <!-- Sidebar -->
 
-        <h1>Eazim</h1>
+    <aside class="sidebar">
 
-        <div class="card">
+        <div class="logo">
 
-            <h2>Customer</h2>
+            <div class="logo-icon">
+                E
+            </div>
 
-            <input
-                type="text"
-                id="customer"
-                placeholder="Customer Name">
-
-            <input
-                type="text"
-                id="phone"
-                placeholder="Phone">
+            <div>
+                <h2>Eazim</h2>
+                <span>Business Suite</span>
+            </div>
 
         </div>
 
-        <div class="card">
+        <nav>
 
-            <h2>Add Product</h2>
+            <a href="#" class="active">
+                <i class="fa-solid fa-receipt"></i>
+                Billing
+            </a>
 
-            <select id="product">
-                <option value="">Select Product</option>
-            </select>
+            <a href="#">
+                <i class="fa-solid fa-users"></i>
+                Customers
+            </a>
 
-            <input
-                type="number"
-                id="qty"
-                placeholder="Quantity">
+            <a href="#">
+                <i class="fa-solid fa-box"></i>
+                Products
+            </a>
 
-            <button id="addBtn">
-                Add Item
-            </button>
+            <a href="#">
+                <i class="fa-solid fa-chart-line"></i>
+                Analytics
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <h4>Eazim v0.1</h4>
+
+            <p>Simple. Fast. Smart.</p>
 
         </div>
 
-    </div>
+    </aside>
 
-    <div class="right">
+    <!-- Main -->
 
-        <div class="bill-card">
+    <main class="content">
 
-            <div class="bill-header">
+        <!-- Header -->
 
-                <div>
-                    <h2>Current Bill</h2>
+        <header>
+
+            <div>
+
+                <h1>Billing</h1>
+
+                <p>Create and manage invoices</p>
+
+            </div>
+
+            <div class="invoice-box">
+
+                <small>Invoice</small>
+
+                <h3 id="invoiceNo">
+                    EZ-000001
+                </h3>
+
+                <span id="billDate"></span>
+
+            </div>
+
+        </header>
+
+        <!-- Workspace -->
+
+        <div class="workspace">
+
+            <!-- Left -->
+
+            <section class="left-panel">
+
+                <!-- Customer -->
+
+                <div class="card">
+
+                    <h3>Customer</h3>
+
+                    <div class="search-wrapper">
+
+                        <input
+                            id="customerSearch"
+                            type="text"
+                            placeholder="Search customer...">
+
+                        <div
+                            id="customerResults"
+                            class="results">
+                        </div>
+
+                    </div>
+
+                    <input
+                        id="phone"
+                        type="text"
+                        placeholder="Phone Number"
+                        readonly>
+
+                    <button
+                        id="newCustomerBtn"
+                        class="secondary">
+                        + Add Customer
+                    </button>
+
                 </div>
 
-               <div class="invoice-box">
+                <!-- Product -->
 
-    <span class="label">
-        Invoice
-    </span>
+                <div class="card">
 
-    <h3 id="invoiceNo">
-        EZ-000001
-    </h3>
+                    <h3>Product</h3>
 
-    <span id="billDate"></span>
+                    <div class="search-wrapper">
 
-       </div>
+                        <input
+                            id="productSearch"
+                            type="text"
+                            placeholder="Search product...">
 
-            </div>
+                        <div
+                            id="productResults"
+                            class="results">
+                        </div>
 
-            <table>
+                    </div>
 
-                <thead>
+                    <input
+                        id="qty"
+                        type="number"
+                        placeholder="Quantity">
 
-                    <tr>
-                        <th>Product</th>
-                        <th>Qty</th>
-                        <th>Rate</th>
-                        <th>Total</th>
-                        <th></th>
-                    </tr>
-
-                </thead>
-
-                <tbody id="billBody">
-
-                </tbody>
-
-            </table>
-
-            <div class="summary">
-
-                <div>
-
-                    <span>Total</span>
-
-                    <h1 id="grandTotal">₹0</h1>
+                    <button
+                        id="addBtn"
+                        class="primary">
+                        Add Item
+                    </button>
 
                 </div>
 
-            </div>
+            </section>
 
-            <div class="buttons">
+            <!-- Right -->
 
-                <button class="save">
-                    Save Bill
-                </button>
+            <section class="right-panel">
 
-                <button class="share">
-                    Share
-                </button>
+                <div class="card">
 
-                <button class="new">
-                    New Bill
-                </button>
+                    <div class="bill-header">
 
-            </div>
+                        <h2>Current Bill</h2>
+
+                        <span id="itemCount">
+                            0 Items
+                        </span>
+
+                    </div>
+
+                    <table>
+
+                        <thead>
+
+                        <tr>
+
+                            <th>Product</th>
+
+                            <th>Qty</th>
+
+                            <th>Rate</th>
+
+                            <th>Total</th>
+
+                            <th></th>
+
+                        </tr>
+
+                        </thead>
+
+                        <tbody id="billBody">
+
+                        </tbody>
+
+                    </table>
+
+                    <div class="summary">
+
+                        <div class="summary-box">
+
+                            <span>Total Qty</span>
+
+                            <h2 id="totalQty">
+                                0
+                            </h2>
+
+                        </div>
+
+                        <div class="summary-box">
+
+                            <span>Grand Total</span>
+
+                            <h1 id="grandTotal">
+                                ₹0
+                            </h1>
+
+                        </div>
+
+                    </div>
+
+                    <div class="actions">
+
+                        <button
+                            id="newBill"
+                            class="dark">
+
+                            New Bill
+
+                        </button>
+
+                        <button
+                            id="saveBill"
+                            class="primary">
+
+                            Save Bill
+
+                        </button>
+
+                        <button
+                            id="shareBill"
+                            class="blue">
+
+                            Share
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
 
         </div>
 
-    </div>
+    </main>
 
 </div>
 
