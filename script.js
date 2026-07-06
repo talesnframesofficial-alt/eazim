@@ -1,3 +1,5 @@
+console.log("Supabase Client:", supabase);
+
 let products = [];
 let customers = [];
 
