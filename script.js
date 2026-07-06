@@ -1,3 +1,48 @@
+// -----------------------------
+// Invoice Generator
+// -----------------------------
+
+function generateInvoiceNumber() {
+
+    let lastInvoice = localStorage.getItem("lastInvoice");
+
+    if (!lastInvoice) {
+
+        lastInvoice = 1;
+
+    } else {
+
+        lastInvoice = parseInt(lastInvoice) + 1;
+
+    }
+
+    localStorage.setItem("lastInvoice", lastInvoice);
+
+    const invoiceNumber =
+        "EZ-" + String(lastInvoice).padStart(6, "0");
+
+    document.getElementById("invoiceNo").textContent =
+        invoiceNumber;
+
+}
+
+generateInvoiceNumber();
+
+
+// -----------------------------
+// Today's Date
+// -----------------------------
+
+const today = new Date();
+
+document.getElementById("billDate").textContent =
+today.toLocaleDateString("en-IN",{
+day:"2-digit",
+month:"short",
+year:"numeric"
+});
+
+
 const products = [
 
 {
