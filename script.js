@@ -1,96 +1,75 @@
-console.log("Supabase Client:", supabase);
+let products = [
 
-const products = [
+    { id:1, name:"555 Gold", price:300 },
 
-{ id:1, name:"555 Gold", price:300 },
+    { id:2, name:"555 Pearl", price:300 },
 
-{ id:2, name:"555 Pearl", price:300 },
+    { id:3, name:"Camel Blue", price:320 },
 
-{ id:3, name:"Camel Blue", price:320 },
+    { id:4, name:"Davidoff Classic", price:320 },
 
-{ id:4, name:"Davidoff Classic", price:320 },
+    { id:5, name:"Davidoff Gold Slim", price:330 },
 
-{ id:5, name:"Davidoff Gold Slim", price:330 },
+    { id:6, name:"Esse Change", price:200 },
 
-{ id:6, name:"Esse Change", price:200 },
+    { id:7, name:"Malboro Red 1st Quality", price:290 },
 
-{ id:7, name:"Malboro Red 1st Quality", price:290 },
+    { id:8, name:"Malboro Red Pro", price:330 },
 
-{ id:8, name:"Malboro Red Pro", price:330 },
+    { id:9, name:"Malboro Vista Double Ice", price:340 },
 
-{ id:9, name:"Malboro Vista Double Ice", price:340 },
+    { id:10, name:"Malboro Vista Double Mix", price:340 },
 
-{ id:10, name:"Malboro Vista Double Mix", price:340 },
+    { id:11, name:"Manchester Red", price:280 },
 
-{ id:11, name:"Manchester Red", price:280 },
+    { id:12, name:"Manchester Sapphire Blue", price:290 },
 
-{ id:12, name:"Manchester Sapphire Blue", price:290 },
+    { id:13, name:"Mond Variance", price:180 },
 
-{ id:13, name:"Mond Variance", price:180 },
-
-{ id:14, name:"Platinum Double", price:280 }
+    { id:14, name:"Platinum Double", price:280 }
 
 ];
-let customers = [];
+
+let customers = [
+
+    {
+        id:1,
+        name:"Chai Tribe",
+        phone:"9526807517",
+        place:"Kowdiar"
+    },
+
+    {
+        id:2,
+        name:"ABC Stores",
+        phone:"9876543210",
+        place:"Trivandrum"
+    },
+
+    {
+        id:3,
+        name:"Royal Traders",
+        phone:"9895000000",
+        place:"Pattom"
+    },
+
+    {
+        id:4,
+        name:"Rahman Stores",
+        phone:"9895111111",
+        place:"Kazhakuttam"
+    }
+
+];
 
 let billItems = [];
 
 let selectedCustomer = null;
 let selectedProduct = null;
-async function loadProducts(){
-
-    const { data, error } = await supabase
-        .from("products")
-        .select("*")
-        .order("brand");
-
-    if(error){
-
-        console.error(error);
-
-        return;
-
-    }
-
-    products = data.map(item=>({
-
-        id:item.id,
-
-        name:item.brand,
-
-        price:item.wholesale_price,
-
-        stock:item.stock
-
-    }));
-
-    console.log(products);
-
-}
-
-async function loadCustomers(){
-
-    const { data, error } = await supabase
-        .from("customers")
-        .select("*")
-        .order("name");
-
-    if(error){
-
-        console.error(error);
-
-        return;
-
-    }
-
-    customers = data;
-
-    console.log(customers);
-
-}
 
 const customerSearch = document.getElementById("customerSearch");
 const customerResults = document.getElementById("customerResults");
+
 const phone = document.getElementById("phone");
 const place = document.getElementById("place");
 
@@ -103,6 +82,7 @@ const billBody = document.getElementById("billBody");
 
 const grandTotal = document.getElementById("grandTotal");
 const totalQty = document.getElementById("totalQty");
+
 const itemCount = document.getElementById("itemCount");
 const itemCount2 = document.getElementById("itemCount2");
 
@@ -114,9 +94,7 @@ const billDate = document.getElementById("billDate");
 const addBtn = document.getElementById("addBtn");
 
 const saveBill = document.getElementById("saveBill");
-
 const newBill = document.getElementById("newBill");
-
 const shareBill = document.getElementById("shareBill");
 
 /* ==========================================
