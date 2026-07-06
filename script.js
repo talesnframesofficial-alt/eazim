@@ -704,15 +704,5 @@ newBill.click();
    Initial Render
 ========================================== */
 
-async function start(){
-
-    await loadProducts();
-
-    await loadCustomers();
-
-    renderBill();
-
-}
-
-start();
+renderBill();
                   
